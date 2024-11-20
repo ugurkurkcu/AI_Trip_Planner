@@ -70,5 +70,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## 📧 Contact
 
 For further information or support, feel free to reach out at:
-	•	Email: [click](uurkurkcu@gmail.com)
+	•	Email: uurkurkcu@gmail.com
 	•	GitHub: [ugurkurkcu](https://github.com/ugurkurkcu)
