@@ -7,7 +7,7 @@
 
 **AI Travel Planner** is a web application that utilizes Google's Gemini AI to create personalized travel itineraries based on user preferences. Users can input details such as their desired destination, travel dates, budget, and interests to generate customized trip plans, including accommodations, activities, and dining recommendations.
 
-## Features
+## 🚀 Features
 
 - **AI-Powered Itinerary Generation:** Utilizes Google's Gemini AI to create tailored travel plans based on user inputs.
 - **Destination Search:** Integrated with Google Places Autocomplete for seamless destination selection.
@@ -16,16 +16,16 @@
 - **Notifications:** Real-time feedback and alerts implemented with Sonner.
 - **Data Base:** Firebase Firestore is used for keeping datas in the app.
 
-## Installation
+## 🛠️ Installation
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/ai-travel-planner.git
+   git clone https://github.com/ugurkurkcu/AI_Trip_Planner
 
 2.	**Navigate to the project directory:**
 
-    cd ai-travel-planner
+    cd AI_Trip_Planner
 
 3.	**Install dependencies:**
 
