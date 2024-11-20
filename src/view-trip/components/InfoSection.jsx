@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../../components/ui/button";
 import { GrSend } from "react-icons/gr";
+import { getPlaceDetails, PHOTO_REF_URL } from "../../service/GlobalAPI";
 
 const InfoSection = ({ trip }) => {
+  const [photoUrl, setPhotoUrl] = useState();
+
+  useEffect(() => {
+    trip && getPlaceImg();
+  }, [trip]);
+
+  const getPlaceImg = async () => {
+    const data = {
+      textQuery: trip?.userSelection?.location?.label,
+    };
+    const result = await getPlaceDetails(data).then((res) => {
+      const photoUrl = PHOTO_REF_URL.replace(
+        "{NAME}",
+        res.data.places[0].photos[4].name
+      );
+
+      setPhotoUrl(photoUrl);
+    });
+  };
+
   return (
     <div>
       <img
-        src="/placeholderImage.jpg"
+        src={photoUrl ? photoUrl : "/placeholderImage.jpg"}
         className=" h-[300px] w-full object-cover object-center rounded-xl"
       />
 
-      <div className=" flex justify-between items-center max-sm:items-start">
+      <div className="  items-center max-sm:items-start">
         <div className=" my-5 flex flex-col gap-2">
           <h2 className=" font-bold text-xl">
             {trip?.userSelection?.location?.label}
@@ -32,9 +53,6 @@ const InfoSection = ({ trip }) => {
             </h2>
           </div>
         </div>
-        <Button className=" max-sm:mt-7">
-          <GrSend />
-        </Button>
       </div>
     </div>
   );

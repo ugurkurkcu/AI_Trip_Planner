@@ -27,7 +27,6 @@ a:hover {
 }
 
 body {
-
 }
 
 h1 {
@@ -52,6 +51,14 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.popover {
+  background-color: gray !important;
+  padding: 0 !important;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 0 7px gray;
 }
 
 @media (prefers-color-scheme: light) {

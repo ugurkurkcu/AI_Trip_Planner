@@ -24,6 +24,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../service/firebase.config";
 import { AiOutlineLoading } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 const CreateTrip = () => {
   const [place, setPlace] = useState();
@@ -223,22 +224,24 @@ const CreateTrip = () => {
       </div>
 
       <Dialog open={openDialog}>
-        <DialogContent>
+        <DialogContent className=" !bg-gray-900">
           <DialogHeader>
             <DialogTitle>
               <img src="/logo.svg" alt="" />
             </DialogTitle>
             <DialogDescription>
-              <h2 className=" font-bold text-xl text-left mt-7">
-                Sign In With Google
-              </h2>
+              <div>
+                <h2 className=" text-white font-bold text-xl text-left mt-7">
+                  Sign In With Google
+                </h2>
 
-              <p className="  text-sm text-left">
-                Sign in to the App with Google authentication securely
-              </p>
-
+                <p className=" text-white text-sm text-left">
+                  Sign in to the App with Google authentication securely
+                </p>
+              </div>
               <Button
                 onClick={login}
+                variant="secondary"
                 className=" w-full mt-5 flex gap-4 items-center"
               >
                 <>
@@ -247,6 +250,15 @@ const CreateTrip = () => {
                 </>
               </Button>
             </DialogDescription>
+            <DialogClose asChild>
+              <Button
+                onClick={() => setOpenDialog(false)}
+                type="button"
+                variant="secondary"
+              >
+                Close
+              </Button>
+            </DialogClose>
           </DialogHeader>
         </DialogContent>
       </Dialog>
